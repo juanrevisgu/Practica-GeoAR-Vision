@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GeoAR Geomática: Gafas</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/ar-aframe.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene 
+        vr-mode-ui="enabled: false" 
+        renderer="logarithmicDepthBuffer: true;"
+        arjs='sourceType: webcam; debugUIEnabled: false;' 
+        loading-screen="enabled: false"
+        
+        a-frame-look-controls="gpsMinDistance: 5;"
+        ar-location-viewer="gpsMinDistance: 5; maxDistance: 100" 
+        
+        a-camera-init="gps: true">
+
+        <a-entity
+            
+            gltf-model="./assets/gafas.glb"
+            
+            gps-new-entity-place="latitude: 43.2505; longitude: -5.7766"
+            
+            scale="2 2 2"
+            rotation="0 0 0" 
+            position="0 0 0"
+        ></a-entity>
+
+        <a-camera gps-camera rotation-reader></a-camera>
+    </a-scene>
+</body>
+</html>
